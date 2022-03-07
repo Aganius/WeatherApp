@@ -12,6 +12,8 @@ struct WeatherControlsView: View {
     
     @ObservedObject var viewModel: WeatherControlsViewModel
     @EnvironmentObject var weatherStore: WeatherStore
+    @State private var isInfoShown: Bool = false
+    @State private var units: Unit = .metric
     
     init(viewModel: WeatherControlsViewModel) {
         self.viewModel = viewModel
@@ -21,8 +23,11 @@ struct WeatherControlsView: View {
     var body: some View {
         ZStack {
             contentView
+            info
         }
-        .onAppear(perform: fetch)
+        .onAppear {
+            fetch()
+        }
     }
     
     @ViewBuilder
@@ -32,19 +37,48 @@ struct WeatherControlsView: View {
             if let weatherInfo = weatherStore.weather.first {
                 let viewModel = WeatherViewModel(weatherInfo: weatherInfo)
                 WeatherView(viewModel: viewModel)
+                    .onTapGesture {
+                        // Rotating current units based on the unit that is currently selected.
+                        switch units {
+                        case .metric:
+                            units = .imperial
+                        case .imperial:
+                            units = .standard
+                        case .standard:
+                            units = .metric
+                        }
+                        fetch(units: units)
+                        // Showing a simple toast when the units change.
+                        withAnimation(.easeInOut(duration: 1.0)) {
+                            isInfoShown = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                withAnimation(.easeInOut(duration: 1.0)) {
+                                    isInfoShown = false
+                                }
+                            }
+                        }
+                    }
             } else {
-                Text("No information available")
+                Text("No information available yet...")
             }
         default:
             Text("Error, we need your permission to use your GPS.")
         }
     }
     
-    private func fetch() {
+    var info: some View {
+        VStack {
+            Spacer()
+            Text("Changed to " + units.rawValue.capitalized)
+        }
+        .opacity(isInfoShown ? 1 : 0)
+    }
+    
+    private func fetch(units: Unit = .metric) {
         guard let coordinate = viewModel.lastSeenLocation?.coordinate else {
             return
         }
-        weatherStore.fetch(matching: coordinate)
+        weatherStore.fetch(matching: coordinate, units: units)
     }
 }
 

@@ -8,6 +8,12 @@
 import Foundation
 import CoreLocation
 
+enum Unit: String {
+    case standard
+    case metric
+    case imperial
+}
+
 class WeatherInfoService {
     private let session: URLSession
     private let decoder: JSONDecoder
@@ -17,7 +23,7 @@ class WeatherInfoService {
         self.decoder = decoder
     }
     
-    func getWeather(matching coordinate: CLLocationCoordinate2D, handler: @escaping (Result<[WeatherInfo], Error>) -> Void) {
+    func getWeather(matching coordinate: CLLocationCoordinate2D, units: Unit, handler: @escaping (Result<[WeatherInfo], Error>) -> Void) {
         guard
             var urlComponents = URLComponents(string: "https://api.openweathermap.org/data/2.5/weather")
         else {
@@ -27,7 +33,7 @@ class WeatherInfoService {
         urlComponents.queryItems = [
             URLQueryItem(name: "lat", value: coordinate.latitude.description),
             URLQueryItem(name: "lon", value: coordinate.longitude.description),
-            URLQueryItem(name: "units", value: "metric"),
+            URLQueryItem(name: "units", value: units.rawValue),
             URLQueryItem(name: "appid", value: "d4277b87ee5c71a468ec0c3dc311a724")
         ]
         

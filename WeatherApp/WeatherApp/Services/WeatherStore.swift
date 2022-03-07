@@ -16,8 +16,8 @@ final class WeatherStore: ObservableObject {
         self.service = service
     }
 
-    func fetch(matching coordinate: CLLocationCoordinate2D) {
-        service.getWeather(matching: coordinate) { [weak self] result in
+    func fetch(matching coordinate: CLLocationCoordinate2D, units: Unit) {
+        service.getWeather(matching: coordinate, units: units) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather): self?.weather = weather
