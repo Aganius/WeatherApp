@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  WeatherApp
+
+  Created by Elioth Quintana on 16/03/23.
+  
+*/
+
+// Mark: - General Text
+"current_wind" = "Wind: %@ (%@)";
+"low_high" = "Low: %@ High: %@";
+"empty_char" = "--";
+"temperature_symbol_celsius" = "ºC";
