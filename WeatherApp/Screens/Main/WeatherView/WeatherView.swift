@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 14, *)
 struct WeatherView: View {
     @ObservedObject var viewModel: WeatherViewModel
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -97,7 +96,6 @@ struct WeatherView: View {
     }
 }
 
-@available(iOS 14, *)
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherView(viewModel: WeatherViewModel.mocked)

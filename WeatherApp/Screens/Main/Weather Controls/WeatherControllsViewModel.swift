@@ -7,7 +7,6 @@
 
 import CoreLocation
 
-@available(iOS 14, *)
 class WeatherControlsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var lastSeenLocation: CLLocation?

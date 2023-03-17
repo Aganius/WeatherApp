@@ -8,17 +8,14 @@
 import Foundation
 
 #if DEBUG
-@available(iOS 14, *)
 private let weatherMock = MockWeatherControls()
 
-@available(iOS 14, *)
 extension WeatherControlsViewModel {
     static var mocked: WeatherControlsViewModel {
         weatherMock.getViewModel()
     }
 }
 
-@available(iOS 14, *)
 private class MockWeatherControls {
     let viewModel = WeatherControlsViewModel()
     

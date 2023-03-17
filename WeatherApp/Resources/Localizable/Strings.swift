@@ -16,4 +16,5 @@ enum Strings: String, LocalizableAsset {
     case temperatureSymbolCelsius = "temperature_symbol_celsius"
     case freeVersionMessage = "free_version_message"
     case noInfo = "no_info"
+    case search = "search"
 }

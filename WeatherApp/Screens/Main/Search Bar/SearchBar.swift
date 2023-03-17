@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct AutocompleteSearchBar: View {
     @ObservedObject var searchBarViewModel: SearchBarViewModel
     @Binding var selectedSearchResult: WeatherSearchResult?
@@ -17,7 +16,7 @@ struct AutocompleteSearchBar: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Search", text: $searchBarViewModel.searchText)
+                TextField(Strings.search.localized, text: $searchBarViewModel.searchText)
                     .padding(.leading, 24)
                     .onReceive(searchBarViewModel.$searchText) { searchText in
                         searchBarViewModel.searchPublisher.send(searchText)
@@ -45,12 +44,11 @@ struct AutocompleteSearchBar: View {
             }
         }
         .onAppear {
-            UITableView.appearance().backgroundColor = UIColor.clear
+            UITableView.appearance().backgroundColor = UIColor.white
         }
     }
 }
 
-@available(iOS 13.0, *)
 struct SearchResultRow: View {
     let searchResult: WeatherSearchResult
     

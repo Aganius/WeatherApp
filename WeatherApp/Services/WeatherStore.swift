@@ -8,7 +8,6 @@
 import CoreLocation
 import Combine
 
-@available(iOS 13, *)
 final class WeatherStore: ObservableObject {
     @Published var weather: WeatherInfo?
     @Published var searchedLocations: [WeatherSearchResult] = []

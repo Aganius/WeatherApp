@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 13, *)
 struct RemoteImageView: View {
     
     @ObservedObject var remoteImageURL: RemoteImageURL
@@ -36,14 +35,12 @@ struct RemoteImageView: View {
 
 /// We need to conform the object to equatable in order to avoid unnecessary reloads in
 /// the views when the view model changes but nothing changes for this specific item
-@available(iOS 13, *)
 extension RemoteImageView: Equatable {
     static func == (lhs: RemoteImageView, rhs: RemoteImageView) -> Bool {
         lhs.remoteImageURL == rhs.remoteImageURL
     }
 }
 
-@available(iOS 13, *)
 class RemoteImageURL: ObservableObject {
     
     @Published var data = Data()
@@ -78,7 +75,6 @@ class RemoteImageURL: ObservableObject {
 
 /// We need to conform the object to equatable in order to avoid unnecessary reloads in
 /// the views when the view model changes but nothing changes for this specific item
-@available(iOS 13, *)
 extension RemoteImageURL: Equatable {
     static func == (lhs: RemoteImageURL, rhs: RemoteImageURL) -> Bool {
         lhs.imageURL == rhs.imageURL
@@ -87,7 +83,6 @@ extension RemoteImageURL: Equatable {
 
 // MARK: - Image Cache Implementation
 
-@available(iOS 13, *)
 class ImageCache {
     static let shared = ImageCache()
     var cache = NSCache<NSString, UIImage>()

@@ -8,10 +8,8 @@
 import Foundation
 
 #if DEBUG
-@available(iOS 13, *)
 private let weatherStoreMock = MockWeatherStore()
 
-@available(iOS 13, *)
 extension WeatherStore {
     static var mocked: WeatherStore {
         weatherStoreMock.getStore()
@@ -20,7 +18,6 @@ extension WeatherStore {
 
 /// This mocked class will allow us to implement testing in our views without the need to actually receive
 /// information from the service.
-@available(iOS 13, *)
 private class MockWeatherStore {
     var store: WeatherStore = WeatherStore(service: .init())
     

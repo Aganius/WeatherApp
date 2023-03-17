@@ -7,7 +7,6 @@
 
 import Foundation
 
-@available(iOS 13, *)
 class WeatherViewModel: NSObject, ObservableObject {
     
     @Published var cityName: String

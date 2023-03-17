@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-@available(iOS 13.0, *)
 class SearchBarViewModel: ObservableObject {
     @Published var weatherStore: WeatherStore
     @Published var searchText = ""

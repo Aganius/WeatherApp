@@ -14,10 +14,10 @@
             filePath = "WeatherApp/Screens/Main/Weather Controls/WeatherControlsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "WeatherControlsView"
-            landmarkType = "14">
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "contentView"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +46,10 @@
             filePath = "WeatherApp/Services/WeatherStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "fetch(matching:)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,8 +62,8 @@
             filePath = "WeatherApp/Screens/Main/Search Bar/SearchBar.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "WeatherApp/Screens/Main/Search Bar/SearchBar.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -94,10 +94,10 @@
             filePath = "WeatherApp/Services/WeatherStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "fetch(matching:)"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -142,8 +142,8 @@
             filePath = "WeatherApp/Screens/Main/WeatherView/WeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "getDayOfWeek(from:)"
             landmarkType = "7">
          </BreakpointContent>

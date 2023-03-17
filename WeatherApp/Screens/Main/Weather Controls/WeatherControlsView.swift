@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 import CoreLocation
 
-@available(iOS 14, *)
 struct WeatherControlsView: View {
     
     @ObservedObject var viewModel: WeatherControlsViewModel
@@ -24,12 +23,12 @@ struct WeatherControlsView: View {
     }
     
     var body: some View {
+        VStack {
+            AutocompleteSearchBar(searchBarViewModel: SearchBarViewModel(weatherStore: weatherStore), selectedSearchResult: $selectedSearchResult)
             VStack {
-                AutocompleteSearchBar(searchBarViewModel: SearchBarViewModel(weatherStore: weatherStore), selectedSearchResult: $selectedSearchResult)
-                VStack {
-                    contentView
-                }
+                contentView
             }
+        }
         .onAppear {
             fetch()
         }
@@ -63,7 +62,6 @@ struct WeatherControlsView: View {
 }
 
 #if DEBUG
-@available(iOS 14, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let store = WeatherStore.mocked
