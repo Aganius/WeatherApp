@@ -63,7 +63,7 @@ class WeatherViewModel: NSObject, ObservableObject {
     static func getForecastDays(forecastdays: [ForecastDay]) -> [ForecastDayInfo] {
         return forecastdays.map { forecastday in
             ForecastDayInfo(
-                day: getDayOfWeek(from: forecastday.dateEpoch) ?? "No info",
+                day: getDayOfWeek(from: forecastday.dateEpoch) ?? Strings.noInfo.localized,
                 averageTemp: "\(Int(forecastday.day.avgtempC))\(Strings.temperatureSymbolCelsius.localized)",
                 icon: forecastday.day.condition.iconUrl
             )

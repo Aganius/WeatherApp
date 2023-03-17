@@ -11,3 +11,5 @@
 "low_high" = "Low: %@ High: %@";
 "empty_char" = "--";
 "temperature_symbol_celsius" = "ºC";
+"free_version_message" = "You can get the premium version to see more forecast days.";
+"no_info" = "No info";

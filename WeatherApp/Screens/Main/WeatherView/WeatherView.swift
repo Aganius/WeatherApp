@@ -80,6 +80,8 @@ struct WeatherView: View {
                         Text(day.averageTemp)
                     }
                 }
+                Text(Strings.freeVersionMessage.localized)
+                    .frame(width: 180)
             }
         }
         .padding(10)

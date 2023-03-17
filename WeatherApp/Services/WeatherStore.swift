@@ -32,6 +32,7 @@ final class WeatherStore: ObservableObject {
                     case .finished:
                         print("Weather request completed successfully.")
                     case .failure(let error):
+                        self.weather = nil
                         print("Error getting weather: \(error.localizedDescription)")
                     }
                 },
